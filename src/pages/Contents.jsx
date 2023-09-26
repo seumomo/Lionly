@@ -52,6 +52,7 @@ function Contents() {
           <div>
             {
               <>
+                <h2 className="sr-only">Contents</h2>
                 <Header data={data} />
                 <div className="p-4">
                   <Content data={data} />

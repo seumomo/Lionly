@@ -7,7 +7,7 @@ function Content({ data }) {
   return (
     data && (
       <section className="flex flex-col gap-y-2.5">
-        <h4 className="sr-only">Content</h4>
+        <h4 className="sr-only">{`${data.expand.author.nickname}의 게시글`}</h4>
         <figure className="flex w-full gap-x-3">
           <ProfileImage
             size={40}
