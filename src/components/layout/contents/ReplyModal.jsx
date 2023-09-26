@@ -1,10 +1,10 @@
+import { useContent } from '@/contexts/Content';
 import { useCreateComment } from '@/hooks';
 import { handlePreventTabControl } from '@/utils';
-import { bool, func } from 'prop-types';
-import { useRef } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
-function ReplyModal({ openModal, setOpenModal }) {
+function ReplyModal() {
+  const { openModal, setOpenModal } = useContent();
   const { handleSubmitComment } = useCreateComment(setOpenModal);
   const replyInputRef = useRef(null);
   const handleInputReply = (e) => {
@@ -77,10 +77,5 @@ function ReplyModal({ openModal, setOpenModal }) {
     </div>
   );
 }
-
-ReplyModal.propTypes = {
-  openModal: bool,
-  setOpenModal: func,
-};
 
 export default ReplyModal;

@@ -3,22 +3,22 @@ import useContentData from './useContentData';
 
 function useDeleteComment(data) {
   const { refetch } = useContentData();
-
-  const handleDeleteComment = async (collection, recordId) => {
+  console.log(data);
+  const handleDeleteComment = async (recordId) => {
     if (
       confirm(
-        `${collection === 'comments' ? '댓글' : '답글'}을 삭제하시겠습니까?`
+        `${
+          data.collectionName === 'comments' ? '댓글' : '답글'
+        }을 삭제하시겠습니까?`
       )
     ) {
-      await pb.collection(collection).delete(recordId);
+      await pb.collection(data.collectionName).delete(recordId);
 
-      data.expand.comments.forEach((comment) =>
-        comment.id === recordId && comment.reply.length > 0
-          ? comment.reply.forEach(
-              async (reply) => await pb.collection('reply').delete(reply)
-            )
-          : null
-      );
+      data.reply.length > 0
+        ? data.reply.forEach(
+            async (reply) => await pb.collection('reply').delete(reply)
+          )
+        : null;
 
       await refetch();
 

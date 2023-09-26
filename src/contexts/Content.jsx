@@ -5,6 +5,7 @@ export const ContentContext = createContext({});
 
 function ContentProvider({ displayName = 'ContentContext', children }) {
   const [selectedComment, setSelectedComment] = useState({});
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <ContentContext.Provider
@@ -12,6 +13,8 @@ function ContentProvider({ displayName = 'ContentContext', children }) {
       value={{
         selectedComment,
         setSelectedComment,
+        openModal,
+        setOpenModal,
       }}
     >
       {children}
