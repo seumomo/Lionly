@@ -13,7 +13,7 @@ function ChannelTab() {
       </p>
       <div className="flex h-[60px] min-w-[320px] overflow-hidden bg-[#f5f5f5]">
         <ul
-          className="mx-[3px] my-[14px] flex gap-x-1.5 px-2"
+          className="mx-[3px] my-[14px] flex gap-x-1.5 px-4"
           role="tablist"
           aria-labelledby="channelList"
           aria-orientation="horizontal"

@@ -6,7 +6,7 @@ import { ReactComponent as Comment } from '@/assets/comment_Feed.svg';
 function Content({ data }) {
   return (
     data && (
-      <main className="flex flex-col gap-y-2.5 py-3">
+      <section className="flex flex-col gap-y-2.5">
         <h4 className="sr-only">Content</h4>
         <figure className="flex w-full gap-x-3">
           <ProfileImage
@@ -59,7 +59,7 @@ function Content({ data }) {
             </p>
           </figcaption>
         </figure>
-      </main>
+      </section>
     )
   );
 }

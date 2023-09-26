@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import pb from '@/api/pocketbase';
 import plus from '@/assets/PlusButton_Writing.svg';
 import Spinner from '@/components/Spinner';

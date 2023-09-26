@@ -51,7 +51,7 @@ function FeedHeader() {
         />
       </div>
 
-      <div className="flex items-center justify-center gap-x-8 gap-y-2 py-8 text-lionly-white">
+      <div className="flex items-center justify-center gap-x-8 gap-y-2 py-6 text-lionly-white">
         <ProfileImage size={70} imageName={[id, profile_image]} />
         <div className="flex h-[70px] flex-col justify-between">
           <span className="block text-lionly-lg">{nickname}</span>

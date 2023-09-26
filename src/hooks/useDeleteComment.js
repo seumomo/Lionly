@@ -3,7 +3,6 @@ import useContentData from './useContentData';
 
 function useDeleteComment(data) {
   const { refetch } = useContentData();
-  console.log(data);
   const handleDeleteComment = async (recordId) => {
     if (
       confirm(

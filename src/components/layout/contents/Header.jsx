@@ -7,7 +7,7 @@ function Header({ data }) {
 
   return (
     data && (
-      <header className="sticky top-0 z-10 flex justify-center bg-lionly-primary-color px-4 py-3">
+      <header className="sticky top-0 z-10 flex justify-center bg-lionly-primary-color px-4 py-1">
         <LeftArrow
           aria-label="뒤로 가기"
           role="button"

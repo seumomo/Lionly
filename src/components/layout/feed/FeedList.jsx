@@ -32,7 +32,7 @@ function FeedList() {
 
   return (
     data && (
-      <main className="min-h-[calc(100vh-280px)]">
+      <main className="min-h-[calc(100vh-280px)] px-4 py-4">
         <h3 className="sr-only">피드 리스트</h3>
         <ul
           id={`tabpanel-${Object.values(channelList).indexOf(true) + 1}`}
@@ -59,7 +59,7 @@ function FeedList() {
                     onClick={() => handleNavigate(content)}
                     className="cursor-pointer"
                   >
-                    <div className="flex flex-col gap-y-2.5 px-4 py-3">
+                    <div className="flex flex-col gap-y-2.5">
                       <Content data={content} />
                     </div>
                   </li>
