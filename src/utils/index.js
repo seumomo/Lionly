@@ -1,6 +1,7 @@
 export { default as calcTimeDifference } from './calcTimeDifference';
 export { default as debounce } from './debounce';
 export { default as getDate } from './getDate';
+export { default as getDateTime } from './getDateTime';
 export { default as getPbImageURL } from './getPbImageURL';
 export { default as getTimeDifference } from './getTimeDifference';
 export { default as handleKeyboardArrowControl } from './handleKeyboardArrowControl';

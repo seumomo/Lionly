@@ -1,4 +1,4 @@
-import { getDate, getPbImageURL } from '@/utils';
+import { getDate, getDateTime, getPbImageURL } from '@/utils';
 import { object } from 'prop-types';
 import { ProfileImage } from '..';
 import { ReactComponent as Comment } from '@/assets/comment_Feed.svg';
@@ -23,21 +23,20 @@ function Content({ data }) {
                 {data.expand.author.nickname}
               </span>
               <div className="flex gap-x-1">
-                <span className="text-lionly-sm text-lionly-gray-1">{`${getDate(
-                  data.created
-                )}`}</span>
+                <time
+                  dateTime={`${getDateTime(data.created)}`}
+                  className="text-lionly-sm text-lionly-gray-1"
+                >{`${getDate(data.created)}`}</time>
               </div>
             </div>
             <div className="flex h-full items-end">
-              <div className="flex items-center gap-x-1">
+              <div role="group" className="flex items-center gap-x-1">
                 <Comment
                   aria-hidden
                   className="w-4 items-center fill-lionly-black"
                 />
-                <span
-                  aria-label="댓글 수"
-                  className="text-lionly-sm text-lionly-black"
-                >
+                <span className="sr-only">댓글 수</span>
+                <span className="text-lionly-sm text-lionly-black">
                   {data.expand.comments
                     ? data.expand.comments
                         .map((comment) => 1 + comment.reply?.length)

@@ -10,7 +10,6 @@ function getDate(createdDate) {
       : '오전 ' + String(date.getHours() === 0 ? 12 : date.getHours())
   );
   const minutes = String(date.getMinutes());
-  // const seconds = String(date.getSeconds());
 
   return `${year}년 ${month}월 ${day}일 ${hours}시 ${minutes}분`;
 }
