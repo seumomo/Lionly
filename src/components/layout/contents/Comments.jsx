@@ -1,6 +1,6 @@
 import { useContent } from '@/contexts/Content';
 import { useDeleteComment, useStorageData } from '@/hooks';
-import { calcTimeDifference } from '@/utils';
+import { calcTimeDifference, getDateTime } from '@/utils';
 import { object } from 'prop-types';
 import { useState } from 'react';
 import { ProfileImage } from '..';
@@ -49,9 +49,12 @@ function Comments({ data }) {
                     <span className="text-lionly-sm-bold">
                       {comment.expand?.commenter.nickname}
                     </span>
-                    <span className="text-lionly-sm text-lionly-gray-2">
+                    <time
+                      dateTime={`${getDateTime(data.created)}`}
+                      className="text-lionly-sm text-lionly-gray-2"
+                    >
                       {calcTimeDifference(comment.created)}
-                    </span>
+                    </time>
                     {storageData.id === comment.commenter ? (
                       <TrashCan
                         tabIndex="0"
@@ -99,9 +102,12 @@ function Comments({ data }) {
                           {reply.expand?.commenter.nickname}
                         </span>
 
-                        <span className="text-lionly-sm text-lionly-gray-2">
+                        <time
+                          dateTime={`${getDateTime(reply.created)}`}
+                          className="text-lionly-sm text-lionly-gray-2"
+                        >
                           {calcTimeDifference(reply.created)}
-                        </span>
+                        </time>
                         {storageData.id === reply.commenter ? (
                           <TrashCan
                             tabIndex="0"
